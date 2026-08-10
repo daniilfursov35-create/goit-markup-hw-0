@@ -1,282 +1,462 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WebStudio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css" />
-    <link rel="stylesheet" href="./css/main.css" />
-  </head>
-  <body>
-    <header id="header" class="page-header">
-      <div class="container header-container">
-        <a href="./index.html" class="logo"><span class="logo-web">Web</span>Studio</a>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order your unique jewelry</title>
+  <style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order your unique jewelry</title>
+  <style>
+    /* --- Базові стилі та скидання --- */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #000000;
+      background-color: #ffffff;
+    }
+
+    /* --- Секція контактів --- */
+    .contact-section {
+      padding: 60px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* --- Заголовок секції --- */
+    .header-block {
+      margin-bottom: 40px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      font-weight: 500;
+      display: block;
+      margin-bottom: 12px;
+      color: #000000;
+    }
+
+    .title {
+      font-size: 44px;
+      font-weight: 400;
+      line-height: 1.2;
+      margin: 0 0 16px 0;
+      letter-spacing: -0.5px;
+    }
+
+    .description {
+      font-size: 16px;
+      color: #333333;
+    }
+
+    /* --- Сітка (Grid) --- */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .form-wrapper {
+      width: 100%;
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .label {
+      font-size: 14px;
+      color: #1a1a1a;
+      cursor: pointer;
+    }
+
+    /* --- Інпути та Textarea (Стани UI Kit) --- */
+    .input,
+    .textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #e0e0e0;
+      border-radius: 0px;
+      font-size: 15px;
+      background-color: #ffffff;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .input::placeholder,
+    .textarea::placeholder {
+      color: #999999;
+    }
+
+    .input:hover,
+    .textarea:hover,
+    .input:focus,
+    .textarea:focus {
+      border-color: #d8c47f;
+    }
+
+    .textarea {
+      resize: vertical;
+      min-height: 140px;
+    }
+
+    .input:user-invalid,
+    .textarea:user-invalid {
+      border-color: #eb5757;
+    }
+
+    /* --- Кнопка Submit --- */
+    .submit-btn {
+      background-color: #d8c47f;
+      color: #000000;
+      border: none;
+      padding: 14px 32px;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      width: fit-content;
+      border-radius: 0px;
+      transition: background-color 0.2s ease;
+    }
+
+    .submit-btn:hover,
+    .submit-btn:focus {
+      background-color: #cbb46b;
+    }
+
+    .submit-btn:active {
+      background-color: #bda355;
+    }
+
+    /* --- Список контактів (ul / li) та посилання --- */
+    .info-wrapper {
+      list-style: none;
+      margin: 0;
+      padding: 20px 0 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .icon-wrapper {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      margin-top: 2px;
+    }
+
+    .info-title {
+      display: block;
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .info-link {
+      font-size: 15px;
+      color: #000000;
+      text-decoration: underline;
+      word-break: break-all;
+      transition: color 0.2s ease;
+    }
+
+    .info-link:hover {
+      color: #2b6cb0;
+    }
+
+    .info-link:active {
+      color: #553c9a;
+    }
+
+    /* --- Адаптивність для планшетів (до 1024px) --- */
+    @media (max-width: 1024px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .info-wrapper {
+        order: -1;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 20px;
+        padding-top: 0;
+      }
+
+      .title {
+        font-size: 36px;
+      }
+    }
+
+    /* --- Адаптивність для телефонів (до 768px) --- */
+    @media (max-width: 768px) {
+      .contact-section {
+        padding: 40px 16px;
+      }
+
+      .info-wrapper {
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .title {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="contact-section">
+    <div class="container">
+      <!-- Заголовок -->
+      <div class="header-block">
+        <span class="subtitle">Connect</span>
+        <h2 class="title">Order your unique jewelry</h2>
+        <p class="description">We'd love to hear more details from you!</p>
+      </div>
+
+      <!-- Основний контент (форма + контакти) -->
+      <div class="content-grid">
         
-        <button class="menu-toggle js-open-menu" aria-expanded="false" aria-controls="mobile-menu">
-          <svg width="24" height="24"><use href="./images/icons.svg#icon-menu"></use></svg>
-        </button>
+        <!-- Форма з валідацією -->
+        <div class="form-wrapper">
+          <form class="form" onsubmit="event.preventDefault()">
+            
+            <div class="field-group">
+              <label class="label" for="user-name">Name*</label>
+              <input 
+                class="input" 
+                type="text" 
+                id="user-name" 
+                name="name" 
+                placeholder="Tony" 
+                required 
+                pattern="^[a-zA-Z\s\.]{5,28}$" 
+              />
+            </div>
 
-        <nav class="navigation">
-          <ul class="nav-list">
-            <li><a href="#features" class="nav-link">Features</a></li>
-            <li><a href="#team" class="nav-link">Team</a></li>
-            <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-          </ul>
-        </nav>
-        <address class="contacts">
-          <ul class="contacts-list">
-            <li><a href="mailto:info@devstudio.com" class="contact-link">info@devstudio.com</a></li>
-            <li><a href="tel:+110001111111" class="contact-link">+11 (000) 111-11-11</a></li>
-          </ul>
-        </address>
-      </div>
-    </header>
+            <div class="field-group">
+              <label class="label" for="user-phone">Phone*</label>
+              <input 
+                class="input" 
+                type="tel" 
+                id="user-phone" 
+                name="phone" 
+                placeholder="+1 234 567 8900" 
+                required 
+                pattern="^\+[0-9\s]{14}$" 
+              />
+            </div>
 
-    <main>
-      <section id="hero" class="hero-section">
-        <div class="container hero-container">
-          <h1 class="hero-title">Effective Solutions for Your Business</h1>
-          <button type="button" class="hero-btn">Order Service</button>
-        </div>
-      </section>
+            <div class="field-group">
+              <label class="label" for="user-message">Describe what you want</label>
+              <textarea 
+                class="textarea" 
+                id="user-message" 
+                name="message" 
+                placeholder="Type your message..." 
+                maxlength="500"
+              ></textarea>
+            </div>
 
-      <section id="features" class="section">
-        <div class="container">
-          <h2 class="sr-only">Our features</h2>
-          <ul class="features-list">
-            <li class="features-item"><div class="features-icon-box"><svg width="64" height="64"><use href="./images/icons.svg#icon-antenna"></use></svg></div><h3 class="features-subtitle">Strategy</h3><p class="features-text">Our goal is to identify the business problem to walk away with the perfect and creative solution.</p></li>
-            <li class="features-item"><div class="features-icon-box"><svg width="64" height="64"><use href="./images/icons.svg#icon-clock"></use></svg></div><h3 class="features-subtitle">Punctuality</h3><p class="features-text">Bring the key message to the brand's audience for the best price within the shortest possible time.</p></li>
-            <li class="features-item"><div class="features-icon-box"><svg width="64" height="64"><use href="./images/icons.svg#icon-diagram"></use></svg></div><h3 class="features-subtitle">Diligence</h3><p class="features-text">Research and confirm brands with the strongest digital growth opportunities and minimize risk.</p></li>
-            <li class="features-item"><div class="features-icon-box"><svg width="64" height="64"><use href="./images/icons.svg#icon-astronaut"></use></svg></div><h3 class="features-subtitle">Technologies</h3><p class="features-text">Design practice focused on digital experiences. We bring forth a deep passion for problem-solving.</p></li>
-          </ul>
-        </div>
-      </section>
-
-    <section id="team" class="section team-section">
-      <div class="container">
-        <h2 class="section-title">Our Team</h2>
-        <ul class="team-list">
-          <li class="team-item">
-            <img srcset="./images/team-1-mob-1x.jpg 1x, ./images/team-1-mob-2x.jpg 2x" src="./images/team-1-mob-1x.jpg" alt="Mark" width="264" height="260">
-            <div class="team-content">
-              <h3 class="team-member">Mark Guerrero</h3>
-              <p class="team-role">Product Designer</p>
-              <ul class="team-social-list">
-                <li><a href="" class="social-link"><svg width="16" height="16"><use href="./images/icons.svg#icon-instagram"></use></svg></a></li>
-                <li><a href="" class="social-link"><svg width="16" height="16"><use href="./images/icons.svg#icon-twitter"></use></svg></a></li>
-                <li><a href="" class="social-link"><svg width="16" height="16"><use href="./images/icons.svg#icon-facebook"></use></svg></a></li>
-                <li><a href="" class="social-link"><svg width="16" height="16"><use href="./images/icons.svg#icon-linkedin"></use></svg></a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="team-item">
-            <img srcset="./images/team-2-mob-1x.jpg 1x, ./images/team-2-mob-2x.jpg 2x" src="./images/team-2-mob-1x.jpg" alt="Tom" width="264" height="260">
-            <div class="team-content">
-              <h3 class="team-member">Tom Ford</h3>
-              <p class="team-role">Frontend Developer</p>
-              <ul class="team-social-list">
-                 <li><a href="" class="social-link"><svg width="16" height="16"><use href="./images/icons.svg#icon-instagram"></use></svg></a></li>
-                 <li><a href="" class="social-link"><svg width="16" height="16"><use href="./images/icons.svg#icon-twitter"></use></svg></a></li>
-                 <li><a href="" class="social-link"><svg width="16" height="16"><use href="./images/icons.svg#icon-facebook"></use></svg></a></li>
-                 <li><a href="" class="social-link"><svg width="16" height="16"><use href="./images/icons.svg#icon-linkedin"></use></svg></a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="team-item">
-            <img srcset="./images/team-3-mob-1x.jpg 1x, ./images/team-3-mob-2x.jpg 2x" src="./images/team-3-mob-1x.jpg" alt="Camila" width="264" height="260">
-            <div class="team-content">
-              <h3 class="team-member">Camila Garcia</h3>
-              <p class="team-role">Marketing</p>
-              <ul class="team-social-list">
-                 <li><a href="" class="social-link"><svg width="16" height="16"><use href="./images/icons.svg#icon-instagram"></use></svg></a></li>
-                 <li><a href="" class="social-link"><svg width="16" height="16"><use href="./images/icons.svg#icon-twitter"></use></svg></a></li>
-                 <li><a href="" class="social-link"><svg width="16" height="16"><use href="./images/icons.svg#icon-facebook"></use></svg></a></li>
-                 <li><a href="" class="social-link"><svg width="16" height="16"><use href="./images/icons.svg#icon-linkedin"></use></svg></a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="team-item">
-            <img srcset="./images/team-4-mob-1x.jpg 1x, ./images/team-4-mob-2x.jpg 2x" src="./images/team-4-mob-1x.jpg" alt="Daniel" width="264" height="260">
-            <div class="team-content">
-              <h3 class="team-member">Daniel Wilson</h3>
-              <p class="team-role">UI Designer</p>
-              <ul class="team-social-list">
-                 <li><a href="" class="social-link"><svg width="16" height="16"><use href="./images/icons.svg#icon-instagram"></use></svg></a></li>
-                 <li><a href="" class="social-link"><svg width="16" height="16"><use href="./images/icons.svg#icon-twitter"></use></svg></a></li>
-                 <li><a href="" class="social-link"><svg width="16" height="16"><use href="./images/icons.svg#icon-facebook"></use></svg></a></li>
-                 <li><a href="" class="social-link"><svg width="16" height="16"><use href="./images/icons.svg#icon-linkedin"></use></svg></a></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </section>
-    <section id="portfolio" class="section">
-      <div class="container">
-        <h2 class="section-title">Our Portfolio</h2>
-        <ul class="portfolio-list">
-          <li class="portfolio-item">
-            <div class="portfolio-thumb">
-              <img srcset="./images/portfolio-1-mob-1x.jpg 1x, ./images/portfolio-1-mob-2x.jpg 2x" src="./images/portfolio-1-mob-1x.jpg" alt="Banking App" width="360" height="300">
-              <p class="portfolio-overlay">14 Stylish and User-Friendly App Design Concepts</p>
-            </div>
-            <div class="portfolio-content">
-              <h3 class="portfolio-subtitle">Banking App</h3>
-              <p class="portfolio-text">App</p>
-            </div>
-          </li>
-      
-          <li class="portfolio-item">
-            <div class="portfolio-thumb">
-             <img srcset="./images/portfolio-2-mob-1x.jpg 1x, ./images/portfolio-2-mob-2x.jpg 2x" src="./images/portfolio-2-mob-1x.jpg" alt="Cashless Payment" width="360" height="300">
-              <p class="portfolio-overlay">14 Stylish and User-Friendly App Design Concepts</p>
-            </div>
-            <div class="portfolio-content">
-              <h3 class="portfolio-subtitle">Cashless Payment</h3>
-              <p class="portfolio-text">Marketing</p>
-            </div>
-          </li>
-      
-          <li class="portfolio-item">
-            <div class="portfolio-thumb">
-              <img srcset="./images/portfolio-3-mob-1x.jpg 1x, ./images/portfolio-3-mob-2x.jpg 2x" src="./images/portfolio-3-mob-1x.jpg" alt="Meditation App" width="360" height="300">
-              <p class="portfolio-overlay">14 Stylish and User-Friendly App Design Concepts</p>
-            </div>
-            <div class="portfolio-content">
-              <h3 class="portfolio-subtitle">Meditation App</h3>
-              <p class="portfolio-text">App</p>
-            </div>
-          </li>
-      
-          <li class="portfolio-item">
-            <div class="portfolio-thumb">
-             <img srcset="./images/portfolio-4-mob-1x.jpg 1x, ./images/portfolio-4-mob-2x.jpg 2x" src="./images/portfolio-4-mob-1x.jpg" alt="Taxi Service" width="360" height="300">
-             <p class="portfolio-overlay">14 Stylish and User-Friendly App Design Concepts</p>
-            </div>
-            <div class="portfolio-content">
-              <h3 class="portfolio-subtitle">Taxi Service</h3>
-              <p class="portfolio-text">Marketing</p>
-            </div>
-          </li>
-      
-          <li class="portfolio-item">
-            <div class="portfolio-thumb">
-              <img srcset="./images/portfolio-5-mob-1x.jpg 1x, ./images/portfolio-5-mob-2x.jpg 2x" src="./images/portfolio-5-mob-1x.jpg" alt="Screen Illustrations" width="360" height="300">
-              <p class="portfolio-overlay">14 Stylish and User-Friendly App Design Concepts</p>
-            </div>
-            <div class="portfolio-content">
-              <h3 class="portfolio-subtitle">Screen Illustrations</h3>
-              <p class="portfolio-text">Design</p>
-            </div>
-          </li>
-      
-          <li class="portfolio-item">
-            <div class="portfolio-thumb">
-              <img srcset="./images/portfolio-6-mob-1x.jpg 1x, ./images/portfolio-6-mob-2x.jpg 2x" src="./images/portfolio-6-mob-1x.jpg" alt="Online Courses" width="360" height="300">
-              <p class="portfolio-overlay">14 Stylish and User-Friendly App Design Concepts</p>
-            </div>
-            <div class="portfolio-content">
-              <h3 class="portfolio-subtitle">Online Courses</h3>
-              <p class="portfolio-text">Marketing</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </section>
-    </main>
-
-    <footer id="footer" class="page-footer">
-      <div class="container footer-container">
-        <div class="footer-logo-block">
-          <a href="./index.html" class="logo"><span class="logo-web">Web</span>Studio</a>
-          <p class="footer-text">
-            Increase the flow of customers and sales for your business with digital marketing & growth solutions.
-          </p>
-        </div>
-
-        <div class="footer-social-block">
-          <p class="footer-social-text">Social media</p>
-          <ul class="footer-social-list">
-            <li>
-              <a href="#" class="footer-social-link"><svg width="24" height="24"><use href="./images/icons.svg#icon-instagram"></use></svg></a>
-            </li>
-            <li>
-              <a href="#" class="footer-social-link"><svg width="24" height="24"><use href="./images/icons.svg#icon-twitter"></use></svg></a>
-            </li>
-            <li>
-              <a href="#" class="footer-social-link"><svg width="24" height="24"><use href="./images/icons.svg#icon-facebook"></use></svg></a>
-            </li>
-            <li>
-              <a href="#" class="footer-social-link"><svg width="24" height="24"><use href="./images/icons.svg#icon-linkedin"></use></svg></a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="footer-subscribe-block">
-          <p class="footer-subscribe-text">Subscribe</p>
-          <form class="footer-form">
-            <input type="email" name="email" class="footer-input" placeholder="E-mail" required />
-            <button type="submit" class="footer-btn">
-              Subscribe
-              <svg width="24" height="24"><use href="./images/icons.svg#icon-send"></use></svg>
-            </button>
+            <button class="submit-btn" type="submit">Submit</button>
           </form>
         </div>
+
+        <!-- Список контактів через ul/li згідно з вимогами -->
+        <ul class="info-wrapper">
+          <li class="info-item">
+            <div class="icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M22 6L12 13L2 6" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <span class="info-title">Email</span>
+              <a href="mailto:info@handmadejewelry.com" class="info-link">info@handmadejewelry.com</a>
+            </div>
+          </li>
+
+          <li class="info-item">
+            <div class="icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 16.92V19.92C22.0011 20.1986 21.9441 20.4742 21.8325 20.7294C21.7209 20.9846 21.5573 21.2136 21.352 21.4021C21.1468 21.5905 20.9037 21.7347 20.6402 21.8263C20.3768 21.9179 20.0983 21.9548 19.82 21.94C16.7428 21.5986 13.7885 20.5341 11.19 18.81C8.77382 17.2147 6.72533 15.1662 5.13 12.75C3.39981 10.1388 2.33333 7.16634 2 4.07C1.98523 3.79288 2.02181 3.51543 2.10853 3.25301C2.19525 2.99059 2.33036 2.74837 2.5057 2.53805C2.68104 2.32773 2.89311 2.15349 3.12933 2.02568C3.36555 1.89787 3.62145 1.81907 3.88 1.79H6.88C7.35339 1.78572 7.81491 1.95449 8.18131 2.26425C8.54772 2.574 8.79471 3.00445 8.88 3.48C9.04373 4.41755 9.30397 5.34211 9.65 6.24C9.78203 6.57997 9.81156 6.9504 9.73475 7.30737C9.65794 7.66434 9.47805 7.99347 9.22 8.25L7.93 9.54C9.39578 12.1227 11.5773 14.3042 14.16 15.77L15.45 14.48C15.7065 14.222 16.0357 14.0421 16.3926 13.9653C16.7496 13.8885 17.12 13.918 17.46 14.05C18.3579 14.396 19.2825 14.6563 20.22 14.82C20.7001 14.9062 21.1347 15.1574 21.4449 15.5293C21.7551 15.9012 21.9224 16.368 21.92 16.85L22 16.92Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <span class="info-title">Phone</span>
+              <a href="tel:+15550000000" class="info-link">+1 (555) 000-0000</a>
+            </div>
+          </li>
+
+          <li class="info-item">
+            <div class="icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <span class="info-title">Office</span>
+              <a 
+                href="https://maps.google.com/?q=76-8+Oakington+Manor+Dr,+London,+UK" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="info-link"
+              >
+                76-8 Oakington Manor Dr, London, UK
+              </a>
+            </div>
+          </li>
+        </ul>
+
       </div>
-    </footer>
+    </div>
+  </section>
 
-    <div class="menu-container js-menu-container" id="mobile-menu">
-      <div class="container menu-wrapper">
-        <button class="menu-toggle js-close-menu" type="button">
-          <svg width="8" height="8"><use href="./images/icons.svg#icon-close"></use></svg>
-        </button>
-    
-        <nav class="mobile-nav">
-          <ul class="mobile-menu-list">
-            <li><a href="./index.html" class="link">Studio</a></li>
-            <li><a href="" class="link">Portfolio</a></li>
-            <li><a href="" class="link">Contacts</a></li>
-          </ul>
-        </nav>
-    
-        <div class="mobile-menu-bottom">
-          <address class="mobile-contacts">
-            <ul class="mobile-contacts-list">
-              <li><a href="tel:+110001111111" class="link mobile-tel">+11 (000) 111-11-11</a></li>
-              <li><a href="mailto:info@devstudio.com" class="link mobile-email">info@devstudio.com</a></li>
-            </ul>
-          </address>
+</body>
+</html>
+  </style>
+</head>
+<body>
 
-          <ul class="mobile-social-list">
-            <li><a href="#"><svg width="24" height="24"><use href="./images/icons.svg#icon-instagram"></use></svg></a></li>
-            <li><a href="#"><svg width="24" height="24"><use href="./images/icons.svg#icon-twitter"></use></svg></a></li>
-            <li><a href="#"><svg width="24" height="24"><use href="./images/icons.svg#icon-facebook"></use></svg></a></li>
-            <li><a href="#"><svg width="24" height="24"><use href="./images/icons.svg#icon-linkedin"></use></svg></a></li>
-          </ul>
+  <section class="contact-section">
+    <div class="container">
+      <!-- Заголовок -->
+      <div class="header-block">
+        <span class="subtitle">Connect</span>
+        <h2 class="title">Order your unique jewelry</h2>
+        <p class="description">We'd love to hear more details from you!</p>
+      </div>
+
+      <!-- Основний контент (форма + контакти) -->
+      <div class="content-grid">
+        
+        <!-- Форма з валідацією -->
+        <div class="form-wrapper">
+          <form class="form" onsubmit="event.preventDefault()">
+            
+            <div class="field-group">
+              <label class="label" for="user-name">Name*</label>
+              <input 
+                class="input" 
+                type="text" 
+                id="user-name" 
+                name="name" 
+                placeholder="Tony" 
+                required 
+                pattern="^[a-zA-Z\s\.]{5,28}$" 
+              />
+            </div>
+
+            <div class="field-group">
+              <label class="label" for="user-phone">Phone*</label>
+              <input 
+                class="input" 
+                type="tel" 
+                id="user-phone" 
+                name="phone" 
+                placeholder="+1 234 567 8900" 
+                required 
+                pattern="^\+[0-9\s]{14}$" 
+              />
+            </div>
+
+            <div class="field-group">
+              <label class="label" for="user-message">Describe what you want</label>
+              <textarea 
+                class="textarea" 
+                id="user-message" 
+                name="message" 
+                placeholder="Type your message..." 
+                maxlength="500"
+              ></textarea>
+            </div>
+
+            <button class="submit-btn" type="submit">Submit</button>
+          </form>
         </div>
+
+        <!-- Список контактів через ul/li згідно з вимогами -->
+        <ul class="info-wrapper">
+          <li class="info-item">
+            <div class="icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M22 6L12 13L2 6" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <span class="info-title">Email</span>
+              <a href="mailto:info@handmadejewelry.com" class="info-link">info@handmadejewelry.com</a>
+            </div>
+          </li>
+
+          <li class="info-item">
+            <div class="icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 16.92V19.92C22.0011 20.1986 21.9441 20.4742 21.8325 20.7294C21.7209 20.9846 21.5573 21.2136 21.352 21.4021C21.1468 21.5905 20.9037 21.7347 20.6402 21.8263C20.3768 21.9179 20.0983 21.9548 19.82 21.94C16.7428 21.5986 13.7885 20.5341 11.19 18.81C8.77382 17.2147 6.72533 15.1662 5.13 12.75C3.39981 10.1388 2.33333 7.16634 2 4.07C1.98523 3.79288 2.02181 3.51543 2.10853 3.25301C2.19525 2.99059 2.33036 2.74837 2.5057 2.53805C2.68104 2.32773 2.89311 2.15349 3.12933 2.02568C3.36555 1.89787 3.62145 1.81907 3.88 1.79H6.88C7.35339 1.78572 7.81491 1.95449 8.18131 2.26425C8.54772 2.574 8.79471 3.00445 8.88 3.48C9.04373 4.41755 9.30397 5.34211 9.65 6.24C9.78203 6.57997 9.81156 6.9504 9.73475 7.30737C9.65794 7.66434 9.47805 7.99347 9.22 8.25L7.93 9.54C9.39578 12.1227 11.5773 14.3042 14.16 15.77L15.45 14.48C15.7065 14.222 16.0357 14.0421 16.3926 13.9653C16.7496 13.8885 17.12 13.918 17.46 14.05C18.3579 14.396 19.2825 14.6563 20.22 14.82C20.7001 14.9062 21.1347 15.1574 21.4449 15.5293C21.7551 15.9012 21.9224 16.368 21.92 16.85L22 16.92Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <span class="info-title">Phone</span>
+              <a href="tel:+15550000000" class="info-link">+1 (555) 000-0000</a>
+            </div>
+          </li>
+
+          <li class="info-item">
+            <div class="icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <span class="info-title">Office</span>
+              <a 
+                href="https://maps.google.com/?q=76-8+Oakington+Manor+Dr,+London,+UK" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="info-link"
+              >
+                76-8 Oakington Manor Dr, London, UK
+              </a>
+            </div>
+          </li>
+        </ul>
+
       </div>
     </div>
+  </section>
 
-     <div class="backdrop" id="modal">
-      <div class="modal">
-        <button class="modal-close-btn" type="button">
-          <svg width="8" height="8"><use href="./images/icons.svg#icon-close"></use></svg>
-        </button>
-
-        <p class="modal-title">Leave your contacts and we will call you back</p>
-  
-        <form class="modal-form">
-          <label>Name <input type="text" name="user-name"></label>
-          <label>Phone <input type="tel" name="user-phone"></label>
-          <label>Email <input type="email" name="user-email"></label>
-          <button type="submit">Send</button>
-        </form>
-      </div> 
-    </div>
-
-    <script src="./js/mobile-menu.js"></script>
-  </body>
+</body>
 </html>
