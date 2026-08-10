@@ -54,7 +54,7 @@
       color: #333333;
     }
 
-    /* --- Сітка (Grid) --- */
+    /* --- Головна сітка секції (форма + блок контактів) --- */
     .content-grid {
       display: grid;
       grid-template-columns: 1.2fr 1fr;
@@ -142,24 +142,29 @@
       background-color: #bda355;
     }
 
-    /* --- Список контактів (ul / li) та посилання --- */
+    /* --- Сітка для списку контактів (2 колонки для Email/Phone, знизу Office) --- */
     .info-wrapper {
       list-style: none;
       margin: 0;
       padding: 20px 0 0 0;
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px 30px;
+    }
+
+    /* Елемент Office розтягуємо на всю ширину сітки (на обидві колонки) */
+    .info-item.office-item {
+      grid-column: 1 / -1;
     }
 
     .info-item {
       display: flex;
+      flex-direction: column;
       align-items: flex-start;
-      gap: 16px; /* Відступ між іконкою та текстом праворуч */
+      gap: 12px;
     }
 
     .icon-wrapper {
-      flex-shrink: 0;
       width: 24px;
       height: 24px;
       display: flex;
@@ -204,9 +209,7 @@
 
       .info-wrapper {
         order: -1;
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 20px;
+        grid-template-columns: 1fr 1fr;
         padding-top: 0;
       }
 
@@ -222,8 +225,12 @@
       }
 
       .info-wrapper {
-        flex-direction: column;
+        grid-template-columns: 1fr;
         gap: 30px;
+      }
+
+      .info-item.office-item {
+        grid-column: auto;
       }
 
       .title {
@@ -291,7 +298,7 @@
           </form>
         </div>
 
-        <!-- Список контактів через ul/li згідно з вимогами -->
+        <!-- Список контактів через ul/li згідно з вимогами макета -->
         <ul class="info-wrapper">
           <li class="info-item">
             <div class="icon-wrapper">
@@ -318,7 +325,7 @@
             </div>
           </li>
 
-          <li class="info-item">
+          <li class="info-item office-item">
             <div class="icon-wrapper">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
