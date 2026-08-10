@@ -5,350 +5,349 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Order your unique jewelry</title>
   <style>
-    /* --- Базові стилі та скидання --- */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+/* --- Базові стилі та скидання --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    body {
-      font-family: sans-serif;
-      color: #000000;
-      background-color: #ffffff;
-    }
+body {
+  font-family: sans-serif;
+  color: #000000;
+  background-color: #ffffff;
+}
 
-    /* --- Секція контактів --- */
-    .contact-section {
-      padding: 60px 20px;
-    }
+/* --- Секція контактів --- */
+.contact-section {
+  padding: 60px 20px;
+}
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-    /* --- Заголовок секції --- */
-    .header-block {
-      margin-bottom: 40px;
-    }
+/* --- Заголовок секції --- */
+.header-block {
+  margin-bottom: 40px;
+}
 
-    .subtitle {
-      font-size: 14px;
-      font-weight: 500;
-      display: block;
-      margin-bottom: 12px;
-      color: #000000;
-    }
+.subtitle {
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 12px;
+  color: #000000;
+}
 
-    .title {
-      font-size: 44px;
-      font-weight: 400;
-      line-height: 1.2;
-      margin: 0 0 16px 0;
-      letter-spacing: -0.5px;
-    }
+.title {
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.5px;
+}
 
-    .description {
-      font-size: 16px;
-      color: #333333;
-    }
+.description {
+  font-size: 16px;
+  color: #333333;
+}
 
-    /* --- Головна сітка секції (форма + блок контактів) --- */
-    .content-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 80px;
-      align-items: start;
-    }
+/* --- Головна сітка секції (форма + блок контактів) --- */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
 
-    .form-wrapper {
-      width: 100%;
-    }
+.form-wrapper {
+  width: 100%;
+}
 
-    .form {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
 
-    .field-group {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
 
-    .label {
-      font-size: 14px;
-      color: #1a1a1a;
-      cursor: pointer;
-    }
+.label {
+  font-size: 14px;
+  color: #1a1a1a;
+  cursor: pointer;
+}
 
-    /* --- Інпути та Textarea (Стани UI Kit) --- */
-    .input,
-    .textarea {
-      width: 100%;
-      padding: 14px 16px;
-      border: 1px solid #e0e0e0;
-      border-radius: 0px;
-      font-size: 15px;
-      background-color: #ffffff;
-      outline: none;
-      transition: border-color 0.2s ease;
-    }
+/* --- Інпути та Textarea (Стани UI Kit) --- */
+.input,
+.textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 0px;
+  font-size: 15px;
+  background-color: #ffffff;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
 
-    .input::placeholder,
-    .textarea::placeholder {
-      color: #999999;
-    }
+.input::placeholder,
+.textarea::placeholder {
+  color: #999999;
+}
 
-    .input:hover,
-    .textarea:hover,
-    .input:focus,
-    .textarea:focus {
-      border-color: #d8c47f;
-    }
+.input:hover,
+.textarea:hover,
+.input:focus,
+.textarea:focus {
+  border-color: #d8c47f;
+}
 
-    .textarea {
-      resize: vertical;
-      min-height: 140px;
-    }
+.textarea {
+  resize: vertical;
+  min-height: 140px;
+}
 
-    .input:user-invalid,
-    .textarea:user-invalid {
-      border-color: #eb5757;
-    }
+.input:user-invalid,
+.textarea:user-invalid {
+  border-color: #eb5757;
+}
 
-    /* --- Кнопка Submit --- */
-    .submit-btn {
-      background-color: #d8c47f;
-      color: #000000;
-      border: none;
-      padding: 14px 32px;
-      font-size: 15px;
-      font-weight: 500;
-      cursor: pointer;
-      width: fit-content;
-      border-radius: 0px;
-      transition: background-color 0.2s ease;
-    }
+/* --- Кнопка Submit --- */
+.submit-btn {
+  background-color: #d8c47f;
+  color: #000000;
+  border: none;
+  padding: 14px 32px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer; /* Зміна курсору за ТЗ */
+  width: fit-content;
+  border-radius: 0px;
+  transition: background-color 0.2s ease;
+}
 
-    .submit-btn:hover,
-    .submit-btn:focus {
-      background-color: #cbb46b;
-    }
+.submit-btn:hover,
+.submit-btn:focus {
+  background-color: #cbb46b;
+}
 
-    .submit-btn:active {
-      background-color: #bda355;
-    }
+.submit-btn:active {
+  background-color: #bda355;
+}
 
-    /* --- Сітка для списку контактів (2 колонки для Email/Phone, знизу Office) --- */
-    .info-wrapper {
-      list-style: none;
-      margin: 0;
-      padding: 20px 0 0 0;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 40px 30px;
-    }
+/* --- Сітка для списку контактів (2 колонки для Email/Phone, знизу Office) --- */
+.info-wrapper {
+  list-style: none;
+  margin: 0;
+  padding: 20px 0 0 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 30px;
+}
 
-    /* Елемент Office розтягуємо на всю ширину сітки (на обидві колонки) */
-    .info-item.office-item {
-      grid-column: 1 / -1;
-    }
+/* Елемент Office розтягуємо на всю ширину сітки (на обидві колонки) */
+.info-item.office-item {
+  grid-column: 1 / -1;
+}
 
-    .info-item {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 12px;
-    }
+.info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
 
-    .icon-wrapper {
-      width: 24px;
-      height: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+.icon-wrapper {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-    .info-content {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
+.info-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
 
-    .info-title {
-      display: block;
-      font-size: 18px;
-      font-weight: 500;
-    }
+.info-title {
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+}
 
-    .info-link {
-      font-size: 15px;
-      color: #000000;
-      text-decoration: underline;
-      word-break: break-all;
-      transition: color 0.2s ease;
-    }
+.info-link {
+  font-size: 15px;
+  color: #000000;
+  text-decoration: underline;
+  word-break: break-all;
+  cursor: pointer; /* Зміна курсору при наведенні на посилання за ТЗ */
+  transition: color 0.2s ease;
+}
 
-    .info-link:hover {
-      color: #2b6cb0;
-    }
+.info-link:hover {
+  color: #2b6cb0;
+}
 
-    .info-link:active {
-      color: #553c9a;
-    }
+.info-link:active {
+  color: #553c9a;
+}
 
-    /* --- Адаптивність для планшетів (до 1024px) --- */
-    @media (max-width: 1024px) {
-      .content-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
+/* --- Адаптивність для планшетів (до 1024px) --- */
+@media (max-width: 1024px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 
-      .info-wrapper {
-        order: -1;
-        grid-template-columns: 1fr 1fr;
-        padding-top: 0;
-      }
+  .info-wrapper {
+    order: -1;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 0;
+  }
 
-      .title {
-        font-size: 36px;
-      }
-    }
+  .title {
+    font-size: 36px;
+  }
+}
 
-    /* --- Адаптивність для телефонів (до 768px) --- */
-    @media (max-width: 768px) {
-      .contact-section {
-        padding: 40px 16px;
-      }
+/* --- Адаптивність для телефонів (до 768px) --- */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 40px 16px;
+  }
 
-      .info-wrapper {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
+  .info-wrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
 
-      .info-item.office-item {
-        grid-column: auto;
-      }
+  .info-item.office-item {
+    grid-column: auto;
+  }
 
-      .title {
-        font-size: 28px;
-      }
-    }
+  .title {
+    font-size: 28px;
+  }
+}
   </style>
 </head>
 <body>
 
-  <section class="contact-section">
-    <div class="container">
-      <!-- Заголовок -->
-      <div class="header-block">
-        <span class="subtitle">Connect</span>
-        <h2 class="title">Order your unique jewelry</h2>
-        <p class="description">We'd love to hear more details from you!</p>
-      </div>
-
-      <!-- Основний контент (форма + контакти) -->
-      <div class="content-grid">
-        
-        <!-- Форма з валідацією -->
-        <div class="form-wrapper">
-          <form class="form" onsubmit="event.preventDefault()">
-            
-            <div class="field-group">
-              <label class="label" for="user-name">Name*</label>
-              <input 
-                class="input" 
-                type="text" 
-                id="user-name" 
-                name="name" 
-                placeholder="Tony" 
-                required 
-                pattern="^[a-zA-Z\s\.]{5,28}$" 
-              />
-            </div>
-
-            <div class="field-group">
-              <label class="label" for="user-phone">Phone*</label>
-              <input 
-                class="input" 
-                type="tel" 
-                id="user-phone" 
-                name="phone" 
-                placeholder="+1 234 567 8900" 
-                required 
-                pattern="^\+[0-9\s]{14}$" 
-              />
-            </div>
-
-            <div class="field-group">
-              <label class="label" for="user-message">Describe what you want</label>
-              <textarea 
-                class="textarea" 
-                id="user-message" 
-                name="message" 
-                placeholder="Type your message..." 
-                maxlength="500"
-              ></textarea>
-            </div>
-
-            <button class="submit-btn" type="submit">Submit</button>
-          </form>
-        </div>
-
-        <!-- Список контактів через ul/li згідно з вимогами макета -->
-        <ul class="info-wrapper">
-          <li class="info-item">
-            <div class="icon-wrapper">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M22 6L12 13L2 6" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <div class="info-content">
-              <span class="info-title">Email</span>
-              <a href="mailto:info@handmadejewelry.com" class="info-link">info@handmadejewelry.com</a>
-            </div>
-          </li>
-
-          <li class="info-item">
-            <div class="icon-wrapper">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M22 16.92V19.92C22.0011 20.1986 21.9441 20.4742 21.8325 20.7294C21.7209 20.9846 21.5573 21.2136 21.352 21.4021C21.1468 21.5905 20.9037 21.7347 20.6402 21.8263C20.3768 21.9179 20.0983 21.9548 19.82 21.94C16.7428 21.5986 13.7885 20.5341 11.19 18.81C8.77382 17.2147 6.72533 15.1662 5.13 12.75C3.39981 10.1388 2.33333 7.16634 2 4.07C1.98523 3.79288 2.02181 3.51543 2.10853 3.25301C2.19525 2.99059 2.33036 2.74837 2.5057 2.53805C2.68104 2.32773 2.89311 2.15349 3.12933 2.02568C3.36555 1.89787 3.62145 1.81907 3.88 1.79H6.88C7.35339 1.78572 7.81491 1.95449 8.18131 2.26425C8.54772 2.574 8.79471 3.00445 8.88 3.48C9.04373 4.41755 9.30397 5.34211 9.65 6.24C9.78203 6.57997 9.81156 6.9504 9.73475 7.30737C9.65794 7.66434 9.47805 7.99347 9.22 8.25L7.93 9.54C9.39578 12.1227 11.5773 14.3042 14.16 15.77L15.45 14.48C15.7065 14.222 16.0357 14.0421 16.3926 13.9653C16.7496 13.8885 17.12 13.918 17.46 14.05C18.3579 14.396 19.2825 14.6563 20.22 14.82C20.7001 14.9062 21.1347 15.1574 21.4449 15.5293C21.7551 15.9012 21.9224 16.368 21.92 16.85L22 16.92Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <div class="info-content">
-              <span class="info-title">Phone</span>
-              <a href="tel:+15550000000" class="info-link">+1 (555) 000-0000</a>
-            </div>
-          </li>
-
-          <li class="info-item office-item">
-            <div class="icon-wrapper">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <div class="info-content">
-              <span class="info-title">Office</span>
-              <a 
-                href="https://maps.google.com/?q=76-8+Oakington+Manor+Dr,+London,+UK" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                class="info-link"
-              >
-                76-8 Oakington Manor Dr, London, UK
-              </a>
-            </div>
-          </li>
-        </ul>
-
-      </div>
+<section class="contact-section">
+  <div class="container">
+    <!-- Заголовок -->
+    <div class="header-block">
+      <span class="subtitle">Connect</span>
+      <h2 class="title">Order your unique jewelry</h2>
+      <p class="description">We'd love to hear more details from you!</p>
     </div>
-  </section>
+
+    <!-- Основний контент (форма + контакти) -->
+    <div class="content-grid">
+      
+      <!-- Форма з валідацією -->
+      <div class="form-wrapper">
+        <form class="form" onsubmit="event.preventDefault()">
+          
+          <div class="field-group">
+            <label class="label" for="user-name">Name*</label>
+            <input 
+              class="input" 
+              type="text" 
+              id="user-name" 
+              name="name" 
+              placeholder="Tony" 
+              required 
+              pattern="^[a-zA-Z\s\.]{5,28}$" 
+            />
+          </div>
+
+          <div class="field-group">
+            <label class="label" for="user-phone">Phone*</label>
+            <input 
+              class="input" 
+              type="tel" 
+              id="user-phone" 
+              name="phone" 
+              placeholder="+1 234 567 8900" 
+              required 
+              pattern="^\+[0-9\s]{14}$" 
+            />
+          </div>
+
+          <div class="field-group">
+            <label class="label" for="user-message">Describe what you want</label>
+            <textarea 
+              class="textarea" 
+              id="user-message" 
+              name="message" 
+              placeholder="Type your message..." 
+              maxlength="500"
+            ></textarea>
+          </div>
+
+          <button class="submit-btn" type="submit">Submit</button>
+        </form>
+      </div>
+
+      <!-- Список контактів через ul/li з використанням SVG-спрайтів -->
+      <ul class="info-wrapper">
+        <li class="info-item">
+          <div class="icon-wrapper">
+            <svg width="24" height="24">
+              <use href="./images/sprite.svg#icon-mail"></use>
+            </svg>
+          </div>
+          <div class="info-content">
+            <span class="info-title">Email</span>
+            <a href="mailto:info@handmadejewelry.com" class="info-link">info@handmadejewelry.com</a>
+          </div>
+        </li>
+
+        <li class="info-item">
+          <div class="icon-wrapper">
+            <svg width="24" height="24">
+              <use href="./images/sprite.svg#icon-phone"></use>
+            </svg>
+          </div>
+          <div class="info-content">
+            <span class="info-title">Phone</span>
+            <a href="tel:+15550000000" class="info-link">+1 (555) 000-0000</a>
+          </div>
+        </li>
+
+        <li class="info-item office-item">
+          <div class="icon-wrapper">
+            <svg width="24" height="24">
+              <use href="./images/sprite.svg#icon-map"></use>
+            </svg>
+          </div>
+          <div class="info-content">
+            <span class="info-title">Office</span>
+            <a 
+              href="https://maps.google.com/?q=76-8+Oakington+Manor+Dr,+London,+UK" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="info-link"
+            >
+              76-8 Oakington Manor Dr, London, UK
+            </a>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</section>
 
 </body>
 </html>
