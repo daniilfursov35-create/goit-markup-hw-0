@@ -154,12 +154,12 @@
 
     .info-item {
       display: flex;
-      flex-direction: column; /* Іконка зверху, текст знизу */
       align-items: flex-start;
-      gap: 8px; /* Відступ між іконкою та назвою */
+      gap: 16px; /* Відступ між іконкою та текстом праворуч */
     }
 
     .icon-wrapper {
+      flex-shrink: 0;
       width: 24px;
       height: 24px;
       display: flex;
@@ -167,11 +167,16 @@
       justify-content: center;
     }
 
+    .info-content {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
     .info-title {
       display: block;
       font-size: 18px;
       font-weight: 500;
-      margin-bottom: 4px;
     }
 
     .info-link {
@@ -295,7 +300,7 @@
                 <path d="M22 6L12 13L2 6" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <div>
+            <div class="info-content">
               <span class="info-title">Email</span>
               <a href="mailto:info@handmadejewelry.com" class="info-link">info@handmadejewelry.com</a>
             </div>
@@ -307,7 +312,7 @@
                 <path d="M22 16.92V19.92C22.0011 20.1986 21.9441 20.4742 21.8325 20.7294C21.7209 20.9846 21.5573 21.2136 21.352 21.4021C21.1468 21.5905 20.9037 21.7347 20.6402 21.8263C20.3768 21.9179 20.0983 21.9548 19.82 21.94C16.7428 21.5986 13.7885 20.5341 11.19 18.81C8.77382 17.2147 6.72533 15.1662 5.13 12.75C3.39981 10.1388 2.33333 7.16634 2 4.07C1.98523 3.79288 2.02181 3.51543 2.10853 3.25301C2.19525 2.99059 2.33036 2.74837 2.5057 2.53805C2.68104 2.32773 2.89311 2.15349 3.12933 2.02568C3.36555 1.89787 3.62145 1.81907 3.88 1.79H6.88C7.35339 1.78572 7.81491 1.95449 8.18131 2.26425C8.54772 2.574 8.79471 3.00445 8.88 3.48C9.04373 4.41755 9.30397 5.34211 9.65 6.24C9.78203 6.57997 9.81156 6.9504 9.73475 7.30737C9.65794 7.66434 9.47805 7.99347 9.22 8.25L7.93 9.54C9.39578 12.1227 11.5773 14.3042 14.16 15.77L15.45 14.48C15.7065 14.222 16.0357 14.0421 16.3926 13.9653C16.7496 13.8885 17.12 13.918 17.46 14.05C18.3579 14.396 19.2825 14.6563 20.22 14.82C20.7001 14.9062 21.1347 15.1574 21.4449 15.5293C21.7551 15.9012 21.9224 16.368 21.92 16.85L22 16.92Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <div>
+            <div class="info-content">
               <span class="info-title">Phone</span>
               <a href="tel:+15550000000" class="info-link">+1 (555) 000-0000</a>
             </div>
@@ -320,7 +325,7 @@
                 <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <div>
+            <div class="info-content">
               <span class="info-title">Office</span>
               <a 
                 href="https://maps.google.com/?q=76-8+Oakington+Manor+Dr,+London,+UK" 
